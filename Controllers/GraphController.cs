@@ -20,10 +20,13 @@ namespace GraphAPIVisualizer.Controllers
         }
 
         [HttpGet]
-        public List<Graph> Get(int i)
+        public List<Graph> Get()
         {
             return GraphController.graphs;
-            
+        }
+        [HttpGet("{id}")]
+        public Graph Get(int id){
+            return GraphController.graphs.ElementAt(id);
         }
 
         [HttpPost]
@@ -38,6 +41,10 @@ namespace GraphAPIVisualizer.Controllers
                 GraphController.graphs.RemoveAt(i);
                 i+=1;
             }
+        }
+        [HttpDelete("{id}")]
+        public void Delete(int id){
+            GraphController.graphs.RemoveAt(id);
         }
     }
 }
