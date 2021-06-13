@@ -2,7 +2,8 @@ using System;
 using System.Collections.Generic;
 
 namespace GraphAPIVisualizer.Objects{
-    public class Graph{
+    public class Graph
+    {
         private static int currentId=0;
         private int id;
         private List<Node> nodes;

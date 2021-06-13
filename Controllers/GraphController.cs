@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using GraphAPIVisualizer.Objects;
+using GraphAPIVisualizer.Database;
 namespace GraphAPIVisualizer.Controllers
 {
     [ApiController] //required by ASP to identify the controller
@@ -22,11 +23,16 @@ namespace GraphAPIVisualizer.Controllers
         [HttpGet]
         public List<Graph> Get()
         {
-            return GraphController.graphs;
+            return GraphDB.Instance.GetGraphs;
         }
-        [HttpGet("{id}")]
+        [HttpGet("{id}")] //obtains the graph with the specific id
         public Graph Get(int id){
-            return GraphController.graphs.ElementAt(id);
+            var g = GraphDB.Instance.GetGraph(id);
+            // if (g==null){
+            //     return NotFound();
+            // }
+            // return Ok(g);
+            return g;
         }
 
         [HttpPost]

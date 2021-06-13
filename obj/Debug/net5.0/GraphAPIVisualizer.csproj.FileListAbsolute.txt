@@ -11,7 +11,6 @@ C:\Users\Daniel Serrano\Documents\Repositorios\GraphAPIVisualizer\GraphAPIVisual
 C:\Users\Daniel Serrano\Documents\Repositorios\GraphAPIVisualizer\GraphAPIVisualizer\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Daniel Serrano\Documents\Repositorios\GraphAPIVisualizer\GraphAPIVisualizer\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Daniel Serrano\Documents\Repositorios\GraphAPIVisualizer\GraphAPIVisualizer\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\Daniel Serrano\Documents\Repositorios\GraphAPIVisualizer\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.csproj.AssemblyReference.cache
 C:\Users\Daniel Serrano\Documents\Repositorios\GraphAPIVisualizer\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Daniel Serrano\Documents\Repositorios\GraphAPIVisualizer\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.AssemblyInfoInputs.cache
 C:\Users\Daniel Serrano\Documents\Repositorios\GraphAPIVisualizer\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.AssemblyInfo.cs
@@ -27,3 +26,4 @@ C:\Users\Daniel Serrano\Documents\Repositorios\GraphAPIVisualizer\GraphAPIVisual
 C:\Users\Daniel Serrano\Documents\Repositorios\GraphAPIVisualizer\GraphAPIVisualizer\obj\Debug\net5.0\ref\GraphAPIVisualizer.dll
 C:\Users\Daniel Serrano\Documents\Repositorios\GraphAPIVisualizer\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.pdb
 C:\Users\Daniel Serrano\Documents\Repositorios\GraphAPIVisualizer\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.genruntimeconfig.cache
+C:\Users\Daniel Serrano\Documents\Repositorios\GraphAPIVisualizer\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.csproj.AssemblyReference.cache
