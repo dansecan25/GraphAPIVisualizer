@@ -26,13 +26,12 @@ namespace GraphAPIVisualizer.Controllers
             return GraphDB.Instance.GetGraphs;
         }
         [HttpGet("{id}")] //obtains the graph with the specific id
-        public Graph Get(int id){
+        public IActionResult Get(int id){
             var g = GraphDB.Instance.GetGraph(id);
-            // if (g==null){
-            //     return NotFound();
-            // }
-            // return Ok(g);
-            return g;
+            if (g==null){
+                return NotFound();
+            }
+            return Ok(g);
         }
 
         [HttpPost]
