@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 
 namespace GraphAPIVisualizer.Objects{
-    public class Graph
-    {
+    public class Graph{
         private static int currentId=0;
         private int id;
-        private List<Node> nodes;
+        private List<Node> nodes = new List<Node>();
+        private List<Edge> edges = new List<Edge>();
         public Graph() {
             this.id=currentId++;
         }
@@ -22,8 +22,17 @@ namespace GraphAPIVisualizer.Objects{
             get { return nodes;}
         }
             
+        public List<Edge> Edges{
+            get { return edges;}
+        }
+
+        public Node FindNodeById(int id) {
+            return nodes.Find(x => x.Id.Equals(id));
+        }
+        public Edge FindEdgeById(int id) {
+            return edges.Find(x => x.Id.Equals(id));
+        }
+
     }
-
-
 
 }

@@ -27,3 +27,32 @@ C:\Users\Daniel Serrano\Documents\Repositorios\GraphAPIVisualizer\GraphAPIVisual
 C:\Users\Daniel Serrano\Documents\Repositorios\GraphAPIVisualizer\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.pdb
 C:\Users\Daniel Serrano\Documents\Repositorios\GraphAPIVisualizer\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.genruntimeconfig.cache
 C:\Users\Daniel Serrano\Documents\Repositorios\GraphAPIVisualizer\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.csproj.AssemblyReference.cache
+C:\Users\adri\projects\GraphAPIVisualizer\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\adri\projects\GraphAPIVisualizer\bin\Debug\net5.0\appsettings.json
+C:\Users\adri\projects\GraphAPIVisualizer\bin\Debug\net5.0\GraphAPIVisualizer.exe
+C:\Users\adri\projects\GraphAPIVisualizer\bin\Debug\net5.0\GraphAPIVisualizer.deps.json
+C:\Users\adri\projects\GraphAPIVisualizer\bin\Debug\net5.0\GraphAPIVisualizer.runtimeconfig.json
+C:\Users\adri\projects\GraphAPIVisualizer\bin\Debug\net5.0\GraphAPIVisualizer.runtimeconfig.dev.json
+C:\Users\adri\projects\GraphAPIVisualizer\bin\Debug\net5.0\GraphAPIVisualizer.dll
+C:\Users\adri\projects\GraphAPIVisualizer\bin\Debug\net5.0\ref\GraphAPIVisualizer.dll
+C:\Users\adri\projects\GraphAPIVisualizer\bin\Debug\net5.0\GraphAPIVisualizer.pdb
+C:\Users\adri\projects\GraphAPIVisualizer\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\adri\projects\GraphAPIVisualizer\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\adri\projects\GraphAPIVisualizer\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\adri\projects\GraphAPIVisualizer\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\adri\projects\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.csproj.AssemblyReference.cache
+C:\Users\adri\projects\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adri\projects\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.AssemblyInfoInputs.cache
+C:\Users\adri\projects\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.AssemblyInfo.cs
+C:\Users\adri\projects\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.csproj.CoreCompileInputs.cache
+C:\Users\adri\projects\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\adri\projects\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\adri\projects\GraphAPIVisualizer\obj\Debug\net5.0\staticwebassets\GraphAPIVisualizer.StaticWebAssets.Manifest.cache
+C:\Users\adri\projects\GraphAPIVisualizer\obj\Debug\net5.0\staticwebassets\GraphAPIVisualizer.StaticWebAssets.xml
+C:\Users\adri\projects\GraphAPIVisualizer\obj\Debug\net5.0\scopedcss\bundle\GraphAPIVisualizer.styles.css
+C:\Users\adri\projects\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.RazorTargetAssemblyInfo.cache
+C:\Users\adri\projects\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.csproj.CopyComplete
+C:\Users\adri\projects\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.dll
+C:\Users\adri\projects\GraphAPIVisualizer\obj\Debug\net5.0\ref\GraphAPIVisualizer.dll
+C:\Users\adri\projects\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.pdb
+C:\Users\adri\projects\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.genruntimeconfig.cache

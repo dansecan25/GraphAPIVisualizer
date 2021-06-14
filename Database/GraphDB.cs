@@ -13,9 +13,9 @@ namespace GraphAPIVisualizer.Database{
         {
             this.graphs = new List<Graph>();
         }
-        public void addGraph()
+        public void addGraph(Graph graph)
         {
-            this.graphs.Add(new Graph());
+            this.graphs.Add(graph);
         }
 
         public Graph GetGraph(int id)
@@ -48,8 +48,12 @@ namespace GraphAPIVisualizer.Database{
         {
             get
             {
-                return this.graphs;
+                return GraphDB.Instance.graphs;
             }
+        }
+
+        public Graph FindById(int id) {
+            return graphs.Find(x => x.Id.Equals(id));
         }
 
     }

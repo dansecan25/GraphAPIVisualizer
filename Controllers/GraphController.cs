@@ -13,7 +13,6 @@ namespace GraphAPIVisualizer.Controllers
     public class GraphController : ControllerBase
     {
         private readonly ILogger<GraphController> _logger;
-        private static List<Graph> graphs = new List<Graph>();
         
         public GraphController(ILogger<GraphController> logger)
         {
@@ -25,6 +24,7 @@ namespace GraphAPIVisualizer.Controllers
         {
             return GraphDB.Instance.GetGraphs;
         }
+
         [HttpGet("{id}")] //obtains the graph with the specific id
         public IActionResult Get(int id){
             var g = GraphDB.Instance.GetGraph(id);
@@ -36,20 +36,23 @@ namespace GraphAPIVisualizer.Controllers
 
         [HttpPost]
         public IActionResult Post(){
-            GraphController.graphs.Add(new Graph());
-            return Ok();
+            Graph result = new Graph();
+            GraphDB.Instance.addGraph(result);
+            return Ok(result);
         }
+
         [HttpDelete]
         public void Delete(){ //deletes all graph elements
-            int i=0;
-            while(i <= GraphController.graphs.Count){
-                GraphController.graphs.RemoveAt(i);
-                i+=1;
-            }
+            // int i=0;
+            // while(i <= GraphDB.Instance.Count){
+            //     GraphController.graphs.RemoveAt(i);
+            //     i+=1;
+            // }
         }
+
         [HttpDelete("{id}")]
         public void Delete(int id){
-            GraphController.graphs.RemoveAt(id);
+            // GraphController.graphs.RemoveAt(id);
         }
     }
 }
