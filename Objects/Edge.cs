@@ -5,14 +5,14 @@ namespace GraphAPIVisualizer.Objects{
     public class Edge{
         private static int currentId=0;
         private int id;
-        private long cost;
+        private long duration;
         private Node sourceNode;
         private Node destinationNode;
-        public Edge(Node sourceNode, Node destinationNode, long cost){
+        public Edge(Node sourceNode, Node destinationNode, long duration){
             this.id = Edge.currentId++;
             this.sourceNode = sourceNode;
             this.destinationNode = destinationNode;
-            this.cost = cost;
+            this.duration = duration;
         }
 
 
@@ -27,8 +27,8 @@ namespace GraphAPIVisualizer.Objects{
         }
 
         public long Cost{
-            get {return cost;} 
-            set {cost = value;}
+            get {return duration;} 
+            set {duration = value;}
         }
         public int Id{
             get {return this.id;}

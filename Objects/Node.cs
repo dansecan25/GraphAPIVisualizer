@@ -5,16 +5,18 @@ namespace GraphAPIVisualizer.Objects{
     public class Node{
         private static int currentId=0;
         private int id;
-        private String value;
+        private String entity;
+        private int inDegree = 0;
+        private int outDegree = 0;
         public Node(){
             this.id = Node.currentId++;
         }
-        public Node(int id){
-            this.id=id;
+        public Node(String entity){
+            this.entity = entity;
         }
-        public String Value{
-            get{return value;} 
-            set {this.value=value;}
+        public String Entity{
+            get{return entity;} 
+            set {this.entity=value;}
         }
         public int Id{
             get {return this.id;}

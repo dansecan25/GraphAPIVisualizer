@@ -20,6 +20,7 @@ namespace GraphAPIVisualizer.Objects{
         }
         public List<Node> Nodes{
             get { return nodes;}
+            set {this.nodes = value;}
         }
             
         public List<Edge> Edges{
@@ -32,6 +33,8 @@ namespace GraphAPIVisualizer.Objects{
         public Edge FindEdgeById(int id) {
             return edges.Find(x => x.Id.Equals(id));
         }
+
+        
 
     }
 
