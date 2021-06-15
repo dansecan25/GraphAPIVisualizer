@@ -8,11 +8,9 @@ namespace GraphAPIVisualizer.Objects{
         private String entity;
         private int inDegree = 0;
         private int outDegree = 0;
-        public Node(){
-            this.id = Node.currentId++;
-        }
         public Node(String entity){
             this.entity = entity;
+            this.id = Node.currentId++;
         }
         public String Entity{
             get{return entity;} 
