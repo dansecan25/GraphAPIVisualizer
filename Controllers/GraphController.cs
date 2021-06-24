@@ -171,8 +171,7 @@ namespace GraphAPIVisualizer.Controllers
 
         // POST api/Graph/id/edges
         [HttpPost("{id}/edges")]
-
-        public IActionResult Post(int id, [FromBody] EdgeDTO edgeDTO){ //
+        public IActionResult Post(int id, [FromBody] EdgeDTO edgeDTO){ 
             Graph graph = GraphDB.Instance.FindById(id);
             if (graph != null) {
 
@@ -192,9 +191,66 @@ namespace GraphAPIVisualizer.Controllers
                 return NotFound("graph not found");
             }
         }
+
         // PUT api/Graph/id/edges/id
+        [HttpPut("{id}/edges/{id2}")]
+        public IActionResult PutEdges(int id, [FromBody] EdgeDTO edgeDTO, int idEdge){
+            Graph graph = GraphDB.Instance.FindById(id);
+            if (graph != null) {
+
+                Node startNode = graph.FindNodeById(edgeDTO.startNodeId);
+                Node endNode = graph.FindNodeById(edgeDTO.endNodeId);
+                int duration = edgeDTO.duration;
+                if (startNode != null && endNode != null) {
+                    Edge edge = new Edge(startNode, endNode, duration);
+                    var e = graph.FindEdgeById(idEdge);
+                    e=edge; //no se ha probado la logica
+                    return Ok(edge);
+                } else {
+                    return NotFound("node not found");
+                }
+
+            }else{
+                return NotFound("graph not found");
+            }
+        }
+
         // DELETE api/Graph/id/edges/id
+        [HttpDelete("{id}/edges/{id2}")]
+        public IActionResult DeleteEdges(int id, [FromBody] EdgeDTO edgeDTO, int idEdge){
+            var g = GraphDB.Instance.FindById(id);
+            if (g==null){
+                return NotFound(); // cambiar response
+            } else {
+                var e =GraphDB.Instance.FindById(id).FindEdgeById(idEdge);
+                if(e==null){
+                    return NotFound();
+                }else{
+                    var dele =GraphDB.Instance.FindById(id).FindEdgeById(idEdge);
+                    GraphDB.Instance.FindById(id).Edges.Remove(dele);
+                    return Ok(dele);
+                }
+            };
+        }
         // GET /graph/id/degree
+        [HttpGet("{id}/degree")]
+        public IActionResult getDegree(int id, string degree){
+            //Graph
+            //degree= Request.QueryString;
+            //string sort = Request.QueryString;
+            if(degree=="DESC"){
+
+            }
+            Graph graph = GraphDB.Instance.FindById(id);
+            List<Node> b= graph.Nodes;
+            Node[] nodesArray = new Node[] {};
+            for(int i=0; i<b.Count; i++){
+                nodesArray[i] = graph.FindNodeById(i);
+            }
+
+            return Ok();
+        }
+
         // GET api/graph/id/dijkstra
 
         

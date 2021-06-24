@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "0uBz7yI8eLjXeHhpR4O4GQ6tG3r3SdZ4JFJPSajpBt+TY3JzO/kApKOcc5PfvBFxlS/ZCl5zHs/A/072eeat7A==",
+  "dgSpecHash": "5cTl+dnTlwETGXuDVdlqtGH5ejcHOQlSHnW0qWRZgStUWloHHQXw1CaB7rE+PaYLp1Kcu/lo5Dl64MY+1kMJLA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\adri\\projects\\GraphAPIVisualizer\\GraphAPIVisualizer.csproj",
+  "projectFilePath": "C:\\Users\\Daniel Serrano\\Documents\\Repositorios\\GraphAPIVisualizer\\GraphAPIVisualizer\\GraphAPIVisualizer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\adri\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
-    "C:\\Users\\adri\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
-    "C:\\Users\\adri\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
-    "C:\\Users\\adri\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
-    "C:\\Users\\adri\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
-    "C:\\Users\\adri\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+    "C:\\Users\\Daniel Serrano\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Daniel Serrano\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Daniel Serrano\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\Daniel Serrano\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\Daniel Serrano\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\Daniel Serrano\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
   ],
   "logs": []
 }

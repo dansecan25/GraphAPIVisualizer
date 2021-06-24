@@ -52,6 +52,7 @@ namespace GraphAPIVisualizer.Database{
             }
         }
 
+
         public Graph FindById(int id) {
             return graphs.Find(x => x.Id.Equals(id));
         }
