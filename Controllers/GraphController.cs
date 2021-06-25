@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using GraphAPIVisualizer.Objects;
 using GraphAPIVisualizer.Database;
+using Microsoft.Extensions.Primitives;
 namespace GraphAPIVisualizer.Controllers
 {
     [ApiController] //required by ASP to identify the controller
@@ -234,21 +236,49 @@ namespace GraphAPIVisualizer.Controllers
         }
         // GET /graph/id/degree
         [HttpGet("{id}/degree")]
-        public IActionResult getDegree(int id, string degree){
-            //Graph
-            //degree= Request.QueryString;
-            //string sort = Request.QueryString;
-            if(degree=="DESC"){
-
-            }
+        public IActionResult degree(int id, [FromQuery]string sort){
+            //Console.WriteLine(sort);
+            //return Ok(sort);
+            
             Graph graph = GraphDB.Instance.FindById(id);
             List<Node> b= graph.Nodes;
             Node[] nodesArray = new Node[] {};
             for(int i=0; i<b.Count; i++){
                 nodesArray[i] = graph.FindNodeById(i);
             }
+            if(sort=="DESC"){
+                nodesArray=sorting(nodesArray, "DESC");
+            }
+            if(sort=="ASC"){
+                nodesArray=sorting(nodesArray, "ASC");
+            }
+            return Ok(nodesArray);
 
-            return Ok();
+        }
+        private Node[] sorting(Node[] array, string iden){
+            int i=0;
+            Boolean exito = true;
+            while (i<array.Length){
+                if ((array[i].Id<array[i+1].Id)&&iden=="DESC"){
+                    var pos1 = array[i];
+                    var pos2 = array[i+1];
+                    array[i]=pos2;
+                    array[i+1]=pos1;
+                    exito=false;
+                }
+                if((array[i].Id>array[i+1].Id)&&iden=="ASC"){
+                    var pos1 = array[i];
+                    var pos2 = array[i+1];
+                    array[i]=pos2;
+                    array[i+1]=pos1;
+                    exito=false;
+                }
+                i+=1;
+            }
+            if (exito==false){
+                return sorting(array, iden);
+            }
+            return array;
         }
 
         // GET api/graph/id/dijkstra
