@@ -228,11 +228,11 @@ namespace GraphAPIVisualizer.Controllers
         public IActionResult DeleteEdges(int id, [FromBody] EdgeDTO edgeDTO, int idEdge){
             var g = GraphDB.Instance.FindById(id);
             if (g==null){
-                return NotFound(); // cambiar response
+                return NotFound("Graph not found"); 
             } else {
                 var e =GraphDB.Instance.FindById(id).FindEdgeById(idEdge);
                 if(e==null){
-                    return NotFound();
+                    return NotFound("Edge not found");
                 }else{
                     var dele =GraphDB.Instance.FindById(id).FindEdgeById(idEdge);
                     GraphDB.Instance.FindById(id).Edges.Remove(dele);
@@ -250,33 +250,52 @@ namespace GraphAPIVisualizer.Controllers
             if (graph!=null){
                 List<Node> b= graph.Nodes;
                 Node[] nodesArray = new Node[] {};
+                int[] degreeArray = new int[]{};
                 for(int i=0; i<b.Count; i++){
+                    int j=0;
+                    int degree = 0;
+                    graph.FindNodeById(i);
+                    while(graph.FindEdgeById(j)!=null){
+                        if(graph.FindEdgeById(j).DestinationNode==graph.FindNodeById(i)||graph.FindEdgeById(j).SourceNode==graph.FindNodeById(i)){
+                            degree+=1;
+                        }    
+                        j+=1;
+                    }
                     nodesArray[i] = graph.FindNodeById(i);
+                    degreeArray[i]=degree;
                 }
                 if(sort=="DESC"){
-                    nodesArray=sorting(nodesArray, "DESC");
+                    nodesArray=sorting(nodesArray, "DESC",degreeArray);
                 }
                 if(sort=="ASC"){
-                    nodesArray=sorting(nodesArray, "ASC");
+                    nodesArray=sorting(nodesArray, "ASC",degreeArray);
                 }
                 return Ok(nodesArray);
-            }else return NotFound("I'm a teapot find a coffeMaker");
+            }else return NotFound("Graph not found");
 
         }
-        private Node[] sorting(Node[] array, string iden){
+        private Node[] sorting(Node[] array, string iden, int[] dArray){
             int i=0;
             Boolean exito = true;
             while (i<array.Length){
-                if ((array[i].Id<array[i+1].Id)&&iden=="DESC"){
+                if ((dArray[i]<dArray[i+1])&&iden=="DESC"){
                     var pos1 = array[i];
                     var pos2 = array[i+1];
+                    var pos1a = dArray[i];
+                    var pos2a = dArray[i+1];
+                    dArray[i]=pos2a;
+                    dArray[i+1]=pos1a;
                     array[i]=pos2;
                     array[i+1]=pos1;
                     exito=false;
                 }
-                if((array[i].Id>array[i+1].Id)&&iden=="ASC"){
+                if((dArray[i]>dArray[i+1])&&iden=="ASC"){
                     var pos1 = array[i];
                     var pos2 = array[i+1];
+                    var pos1a = dArray[i];
+                    var pos2a = dArray[i+1];
+                    dArray[i]=pos2a;
+                    dArray[i+1]=pos1a;
                     array[i]=pos2;
                     array[i+1]=pos1;
                     exito=false;
@@ -284,7 +303,7 @@ namespace GraphAPIVisualizer.Controllers
                 i+=1;
             }
             if (exito==false){
-                return sorting(array, iden);
+                return sorting(array, iden,dArray);
             }
             return array;
         }
