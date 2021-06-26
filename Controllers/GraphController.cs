@@ -73,7 +73,7 @@ namespace GraphAPIVisualizer.Controllers
         // POST api/Graph/id/nodes
         [HttpPost("{id}/nodes")]
         public IActionResult Post(int id, [FromBody] NodeDTO nodeDTO)
-        { //
+        { 
             Graph graph = GraphDB.Instance.FindById(id);
             if (graph != null) {
 
@@ -240,18 +240,15 @@ namespace GraphAPIVisualizer.Controllers
                 }
             };
         }
-        //GET /graph/id/edges/id
-        [HttpGet()]
         // GET /graph/id/degree
         [HttpGet("{id}/degree")]
         public IActionResult degree(int id, [FromQuery]string sort){
-            
             Graph graph = GraphDB.Instance.FindById(id);
             if (graph!=null){
                 List<Node> b= graph.Nodes;
-                Node[] nodesArray = new Node[] {};
-                int[] degreeArray = new int[]{};
-                for(int i=0; i<b.Count; i++){
+                Node[] nodesArray = new Node[b.Count];
+                int[] degreeArray = new int[b.Count];
+                for(int i=0; graph.FindNodeById(i)!=null; i++){
                     int j=0;
                     int degree = 0;
                     graph.FindNodeById(i);
@@ -261,7 +258,7 @@ namespace GraphAPIVisualizer.Controllers
                         }    
                         j+=1;
                     }
-                    nodesArray[i] = graph.FindNodeById(i);
+                    nodesArray[i]=graph.FindNodeById(i);
                     degreeArray[i]=degree;
                 }
                 if(sort=="DESC"){
@@ -277,7 +274,7 @@ namespace GraphAPIVisualizer.Controllers
         private Node[] sorting(Node[] array, string iden, int[] dArray){
             int i=0;
             Boolean exito = true;
-            while (i<array.Length){
+            while (i+1!=dArray.Length){
                 if ((dArray[i]<dArray[i+1])&&iden=="DESC"){
                     var pos1 = array[i];
                     var pos2 = array[i+1];
