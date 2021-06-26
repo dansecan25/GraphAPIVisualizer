@@ -193,24 +193,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Daniel\\.nuget\\packages\\": {}
+    "C:\\Users\\Daniel Serrano\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\Uni\\2021 I Semestre\\Datos I\\Proyecto 3\\GraphAPIVisualizer\\GraphAPIVisualizer.csproj",
+      "projectUniqueName": "C:\\Users\\Daniel Serrano\\Documents\\Repositorios\\GraphAPIVisualizer\\GraphAPIVisualizer\\GraphAPIVisualizer.csproj",
       "projectName": "GraphAPIVisualizer",
-      "projectPath": "Z:\\Uni\\2021 I Semestre\\Datos I\\Proyecto 3\\GraphAPIVisualizer\\GraphAPIVisualizer.csproj",
-      "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
-      "outputPath": "Z:\\Uni\\2021 I Semestre\\Datos I\\Proyecto 3\\GraphAPIVisualizer\\obj\\",
+      "projectPath": "C:\\Users\\Daniel Serrano\\Documents\\Repositorios\\GraphAPIVisualizer\\GraphAPIVisualizer\\GraphAPIVisualizer.csproj",
+      "packagesPath": "C:\\Users\\Daniel Serrano\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Daniel Serrano\\Documents\\Repositorios\\GraphAPIVisualizer\\GraphAPIVisualizer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Daniel Serrano\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -252,7 +254,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

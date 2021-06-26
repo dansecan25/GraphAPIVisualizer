@@ -21,9 +21,10 @@ namespace GraphAPIVisualizer.Controllers
 
         // GET: api/Graph
         [HttpGet]
-        public List<Graph> Get()
+        public IActionResult Get()
         {
-            return GraphDB.Instance.GetGraphs;
+            List<Graph> grafos = GraphDB.Instance.GetGraphs;
+            return Ok(grafos);
         }
 
          // POST: api/Graph
@@ -111,10 +112,10 @@ namespace GraphAPIVisualizer.Controllers
 
                 nodeToUpdate.Entity = entity;
 
-                 return Ok(); 
+                 return Ok(nodeToUpdate); 
 
             } else {
-                return NotFound(); // cambiar response
+                return NotFound(); 
             }
         }
 
@@ -148,11 +149,15 @@ namespace GraphAPIVisualizer.Controllers
 
         // GET api/Graph/id/edges
         [HttpGet("{id}/edges")]
-        public List<Edge> GetEdges(int id)
+        public IActionResult GetEdges(int id)
         { 
             Graph graph = GraphDB.Instance.FindById(id);
-            List<Edge> edgeList = graph.Edges;
-            return edgeList;
+            if(graph!=null){
+                List<Edge> edgeList = graph.Edges;
+                return Ok(edgeList);
+            }
+            else return NotFound("Graph not found");
+            
         }
 
         // DELETE api/Graph/id/edges
@@ -192,20 +197,23 @@ namespace GraphAPIVisualizer.Controllers
             }
         }
 
-        // PUT api/Graph/id/edges/id
+        // PUT api/Graph/id/edges/id/nodos
         [HttpPut("{id}/edges/{id2}")]
         public IActionResult PutEdges(int id, [FromBody] EdgeDTO edgeDTO, int idEdge){
             Graph graph = GraphDB.Instance.FindById(id);
             if (graph != null) {
-
-                Node startNode = graph.FindNodeById(edgeDTO.startNodeId);
-                Node endNode = graph.FindNodeById(edgeDTO.endNodeId);
-                int duration = edgeDTO.duration;
+                
+                int initialNode = edgeDTO.startNodeId;
+                int finalNode = edgeDTO.endNodeId;
+                int weight = edgeDTO.duration;
+                Node startNode = graph.FindNodeById(initialNode);
+                Node endNode = graph.FindNodeById(finalNode);
                 if (startNode != null && endNode != null) {
-                    Edge edge = new Edge(startNode, endNode, duration);
                     var e = graph.FindEdgeById(idEdge);
-                    e=edge; //no se ha probado la logica
-                    return Ok(edge);
+                    e.DestinationNode=endNode;
+                    e.SourceNode=startNode;
+                    e.Cost=weight;
+                    return Ok(e);
                 } else {
                     return NotFound("node not found");
                 }
@@ -232,25 +240,27 @@ namespace GraphAPIVisualizer.Controllers
                 }
             };
         }
+        //GET /graph/id/edges/id
+        [HttpGet()]
         // GET /graph/id/degree
         [HttpGet("{id}/degree")]
         public IActionResult degree(int id, [FromQuery]string sort){
-            //Console.WriteLine(sort);
-            //return Ok(sort);
             
             Graph graph = GraphDB.Instance.FindById(id);
-            List<Node> b= graph.Nodes;
-            Node[] nodesArray = new Node[] {};
-            for(int i=0; i<b.Count; i++){
-                nodesArray[i] = graph.FindNodeById(i);
-            }
-            if(sort=="DESC"){
-                nodesArray=sorting(nodesArray, "DESC");
-            }
-            if(sort=="ASC"){
-                nodesArray=sorting(nodesArray, "ASC");
-            }
-            return Ok(nodesArray);
+            if (graph!=null){
+                List<Node> b= graph.Nodes;
+                Node[] nodesArray = new Node[] {};
+                for(int i=0; i<b.Count; i++){
+                    nodesArray[i] = graph.FindNodeById(i);
+                }
+                if(sort=="DESC"){
+                    nodesArray=sorting(nodesArray, "DESC");
+                }
+                if(sort=="ASC"){
+                    nodesArray=sorting(nodesArray, "ASC");
+                }
+                return Ok(nodesArray);
+            }else return NotFound("I'm a teapot find a coffeMaker");
 
         }
         private Node[] sorting(Node[] array, string iden){
@@ -281,8 +291,9 @@ namespace GraphAPIVisualizer.Controllers
 
         // GET api/graph/id/dijkstra
         [HttpGet("{id}/dijkstra")]
-        public IActionResult dijkstra()
+        public IActionResult dijkstra(int id, [FromQuery] int startNode, [FromQuery] int endNode)
         {
+            //GraphDB.Instance.FindById(1).FindEdgeById(2).
             int graphSize = GraphDB.Instance.GetSize();
             int[,] adjMatrix = new int[graphSize,graphSize];
             int[] distance = new int[graphSize];
@@ -292,10 +303,9 @@ namespace GraphAPIVisualizer.Controllers
                 distance[i] = int.MaxValue;
                 previous[i] = 0;
             }
-            int source = 1;
-            distance = 0;
+            distance[startNode] = 0;
             PriorityQueue<int> queue = new PriorityQueue<int>();
-            queue.Enqueue(source,adjMatrix);
+            queue.Enqueue(startNode,adjMatrix);
             for (int i = 1; i < graphSize; i++)
             {
                 for (int j = 1; j < graphSize; j++)
@@ -306,30 +316,30 @@ namespace GraphAPIVisualizer.Controllers
                     }
                 }
             }
-            while (!queue.Empty())
-            {
-                int u = pq.dequeue_min();
+            // while (!queue.Empty())
+            // {
+            //     int u = pq.dequeue_min();
            
-                for (int v = 1; v < graphSize; v++)//scan each row fully
-                {
-                    if (adjMatrix[u,v] > 0)//if there is an adjacent node
-                    {
-                        int alt = distance[u] + adjMatrix[u, v];
-                        if (alt < distance[v])
-                        {
-                            distance[v] = alt;
-                            previous[v] = u;
-                            queue.Enqueue(u,adjMatrix);
-                        }
-                    }
-                }
-            }
+            //     for (int v = 1; v < graphSize; v++)//scan each row fully
+            //     {
+            //         if (adjMatrix[u,v] > 0)//if there is an adjacent node
+            //         {
+            //             int alt = distance[u] + adjMatrix[u, v];
+            //             if (alt < distance[v])
+            //             {
+            //                 distance[v] = alt;
+            //                 previous[v] = u;
+            //                 queue.Enqueue(u,adjMatrix);
+            //             }
+            //         }
+            //     }
+            // }
         //distance to 1..2..3..4..5..6 etc lie inside each index
  
-            for (int i = 1; i < graphSize; i++)
-            {
-            Console.WriteLine("Distance from {0} to {1}: {2}", source, i, distance[i]);
-            }
+            // for (int i = 1; i < graphSize; i++)
+            // {
+            // Console.WriteLine("Distance from {0} to {1}: {2}", source, i, distance[i]);
+            // }
             return Ok();
         }
         

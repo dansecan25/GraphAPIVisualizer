@@ -1,7 +1,40 @@
 using System;
 class PriorityQueue<T>
-    {
 
+    {
+        class Node
+        {
+            public T data;
+            public int priority;
+            public static bool operator <(Node n1, Node n2)
+            {
+                return (n1.priority < n2.priority); } public static bool operator >(Node n1, Node n2)
+            {
+                return (n1.priority > n2.priority);
+            }
+            public static bool operator <=(Node n1, Node n2)
+            {
+                return (n1.priority <= n2.priority); } public static bool operator >=(Node n1, Node n2)
+            {
+                return (n1.priority >= n2.priority);
+            }
+            public static bool operator ==(Node n1, Node n2)
+            {
+                return (n1.priority == n2.priority && (dynamic)n1.data == (dynamic)n2.data);
+            }
+            public static bool operator !=(Node n1, Node n2)
+            {
+                return (n1.priority != n2.priority && (dynamic)n1.data != (dynamic)n2.data);
+            }
+            public override bool Equals(object obj)
+            {
+                return base.Equals(obj);
+            }
+            public override int GetHashCode()
+            {
+                return base.GetHashCode();
+            }
+        }
         Node[] arr;
         private int count;
         private const int arrSize = 100;
@@ -14,7 +47,7 @@ class PriorityQueue<T>
         {
             Node nObj = new Node();
             nObj.data = nData;
-            nObj.priority = priority;
+            //nObj.priority = priority;
             if (count == arr.Length)
             {
                 throw new Exception("Priority Queue is at full capacity");
