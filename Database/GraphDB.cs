@@ -8,14 +8,17 @@ namespace GraphAPIVisualizer.Database{
         private static readonly object padlock = new object();
 
         private List<Graph> graphs = new List<Graph>();
+        private int size = 0;
 
         private GraphDB()
         {
             this.graphs = new List<Graph>();
+            this.size = 0;
         }
         public void addGraph(Graph graph)
         {
             this.graphs.Add(graph);
+            this.size += 1;
         }
 
         public Graph GetGraph(int id)
@@ -55,6 +58,11 @@ namespace GraphAPIVisualizer.Database{
 
         public Graph FindById(int id) {
             return graphs.Find(x => x.Id.Equals(id));
+        }
+
+        public int GetSize()
+        {
+            return this.size;
         }
 
     }

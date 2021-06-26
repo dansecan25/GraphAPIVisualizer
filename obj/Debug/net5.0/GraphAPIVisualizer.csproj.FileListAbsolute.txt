@@ -56,3 +56,32 @@ C:\Users\adri\projects\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.dl
 C:\Users\adri\projects\GraphAPIVisualizer\obj\Debug\net5.0\ref\GraphAPIVisualizer.dll
 C:\Users\adri\projects\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.pdb
 C:\Users\adri\projects\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.genruntimeconfig.cache
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\bin\Debug\net5.0\appsettings.Development.json
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\bin\Debug\net5.0\appsettings.json
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\bin\Debug\net5.0\GraphAPIVisualizer.exe
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\bin\Debug\net5.0\GraphAPIVisualizer.deps.json
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\bin\Debug\net5.0\GraphAPIVisualizer.runtimeconfig.json
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\bin\Debug\net5.0\GraphAPIVisualizer.runtimeconfig.dev.json
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\bin\Debug\net5.0\GraphAPIVisualizer.dll
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\bin\Debug\net5.0\ref\GraphAPIVisualizer.dll
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\bin\Debug\net5.0\GraphAPIVisualizer.pdb
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\bin\Debug\net5.0\Microsoft.OpenApi.dll
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.csproj.AssemblyReference.cache
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.AssemblyInfoInputs.cache
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.AssemblyInfo.cs
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.csproj.CoreCompileInputs.cache
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.MvcApplicationPartsAssemblyInfo.cs
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.MvcApplicationPartsAssemblyInfo.cache
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\obj\Debug\net5.0\staticwebassets\GraphAPIVisualizer.StaticWebAssets.Manifest.cache
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\obj\Debug\net5.0\staticwebassets\GraphAPIVisualizer.StaticWebAssets.xml
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\obj\Debug\net5.0\scopedcss\bundle\GraphAPIVisualizer.styles.css
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.RazorTargetAssemblyInfo.cache
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.csproj.CopyComplete
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.dll
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\obj\Debug\net5.0\ref\GraphAPIVisualizer.dll
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.pdb
+Z:\Uni\2021 I Semestre\Datos I\Proyecto 3\GraphAPIVisualizer\obj\Debug\net5.0\GraphAPIVisualizer.genruntimeconfig.cache

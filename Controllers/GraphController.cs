@@ -1,13 +1,11 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using GraphAPIVisualizer.Objects;
 using GraphAPIVisualizer.Database;
-using Microsoft.Extensions.Primitives;
+using GraphAPIVisualizer;
 namespace GraphAPIVisualizer.Controllers
 {
     [ApiController] //required by ASP to identify the controller
@@ -282,7 +280,58 @@ namespace GraphAPIVisualizer.Controllers
         }
 
         // GET api/graph/id/dijkstra
-
+        [HttpGet("{id}/dijkstra")]
+        public IActionResult dijkstra()
+        {
+            int graphSize = GraphDB.Instance.GetSize();
+            int[,] adjMatrix = new int[graphSize,graphSize];
+            int[] distance = new int[graphSize];
+            int[] previous = new int[graphSize];
+            for(int i = 1; i<graphSize; i++)
+            {
+                distance[i] = int.MaxValue;
+                previous[i] = 0;
+            }
+            int source = 1;
+            distance = 0;
+            PriorityQueue<int> queue = new PriorityQueue<int>();
+            queue.Enqueue(source,adjMatrix);
+            for (int i = 1; i < graphSize; i++)
+            {
+                for (int j = 1; j < graphSize; j++)
+                {
+                    if (adjMatrix[i, j] > 0)
+                    {
+                        queue.Enqueue(i,adjMatrix);
+                    }
+                }
+            }
+            while (!queue.Empty())
+            {
+                int u = pq.dequeue_min();
+           
+                for (int v = 1; v < graphSize; v++)//scan each row fully
+                {
+                    if (adjMatrix[u,v] > 0)//if there is an adjacent node
+                    {
+                        int alt = distance[u] + adjMatrix[u, v];
+                        if (alt < distance[v])
+                        {
+                            distance[v] = alt;
+                            previous[v] = u;
+                            queue.Enqueue(u,adjMatrix);
+                        }
+                    }
+                }
+            }
+        //distance to 1..2..3..4..5..6 etc lie inside each index
+ 
+            for (int i = 1; i < graphSize; i++)
+            {
+            Console.WriteLine("Distance from {0} to {1}: {2}", source, i, distance[i]);
+            }
+            return Ok();
+        }
         
     }
 }
